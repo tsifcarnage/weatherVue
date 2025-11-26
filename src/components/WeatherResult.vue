@@ -18,7 +18,10 @@ export default {
     </p>
 
     <!-- Résultat météo -->
-    <div class="flex flex-col" v-else>
+    <div
+      class="flex flex-col border-green-600 border-2 rounded-2xl my-5 py-3"
+      v-else
+    >
       <h2>{{ weather.location.name }}, {{ weather.location.country }}</h2>
 
       <img

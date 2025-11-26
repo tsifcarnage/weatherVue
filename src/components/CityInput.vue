@@ -17,7 +17,7 @@ export default {
     <input
       v-model="city"
       minlength="3"
-      class="text-red-500 border-amber-700 border-2 p-2 rounded-2xl"
+      class="text-red-500 border-amber-700 border-2 mb-3 p-2 rounded-2xl"
       type="text"
       placeholder="Chercher une ville"
     />

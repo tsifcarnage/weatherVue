@@ -25,7 +25,7 @@ export default {
       this.error = "";
       try {
         const response = await axios.get(
-          `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=no`
+          `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=no&lang=fr`
         );
         this.weather = response.data;
       } catch (err) {
@@ -40,7 +40,7 @@ export default {
 };
 </script>
 <template>
-  <h1 class="m-3">Weather Application</h1>
+  <h1 class="my-6 text-blue-500">Weather Application</h1>
   <CityInput @search="fetchWeather" />
   <WeatherResult :weather="weather" :error="error" />
 </template>
