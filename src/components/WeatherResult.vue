@@ -10,7 +10,7 @@ export default {
 <template>
   <div>
     <!-- Message d'erreur -->
-    <p v-if="error" class="py-3">Pas de ville trouvée</p>
+    <p v-if="error" class="py-3">Aucune correspondance trouvée</p>
 
     <!-- Aucune recherche encore -->
     <p v-else-if="!weather" class="py-3">
