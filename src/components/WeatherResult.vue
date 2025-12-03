@@ -5,6 +5,13 @@ export default {
     weather: Object,
     error: String,
   },
+  computed: {
+    heure() {
+      if (!this.weather?.location?.localtime) return "";
+      // "2025-12-03 19:05" → récupérer "19:05"
+      return this.weather.location.localtime.split(" ")[1];
+    },
+  },
 };
 </script>
 <template>
@@ -32,8 +39,11 @@ export default {
         class="weather-icon w-[30%] self-center"
       />
 
-      <p class="condition">{{ weather.current.condition.text }}</p>
+      <p class="italic">
+        {{ weather.current.condition.text }}
+      </p>
       <p class="text-3xl font-bold">{{ weather.current.temp_c }} °C</p>
+      <p>Heure: {{ heure }}</p>
       <p>Humidité : {{ weather.current.humidity }} %</p>
       <p>Vent : {{ weather.current.wind_kph }} km/h</p>
     </div>
